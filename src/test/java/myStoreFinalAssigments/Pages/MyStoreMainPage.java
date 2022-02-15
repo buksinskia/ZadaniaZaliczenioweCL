@@ -14,8 +14,14 @@ public class MyStoreMainPage {
     }
     @FindBy(xpath ="//*[@id=\"_desktop_user_info\"]/div/a")
    private WebElement signInButton;
+   @FindBy(xpath = "//*[text()='Hummingbird printed sweater']")
+   private WebElement chosenProduct;
 
     public void navigateToSignInOnAMainPage(){
+
         signInButton.click();
    }
+    public void clickOnChosenProduct(){
+        chosenProduct.click();}
 }
+
