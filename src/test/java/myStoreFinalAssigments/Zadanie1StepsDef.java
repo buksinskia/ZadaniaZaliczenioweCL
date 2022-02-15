@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import myStoreFinalAssigments.Pages.*;
+import org.junit.After;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -27,7 +28,6 @@ public class Zadanie1StepsDef {
     @Before
     public void setup(){
         driver= WebdriverFactory.createChromeDriver();
-        PageFactory.initElements(driver,this);
         myStoreMainPage=new MyStoreMainPage(driver);
         loginPage=new LoginPage(driver);
         yourAccountPage=new YourAccountPage(driver);
@@ -65,9 +65,9 @@ public class Zadanie1StepsDef {
 
     }
 
-    @And("fill mandatory fields {string}, {string}, {string}, {string},{string},{string}")
-    public void fillMandatoryFields(String alias, String address, String city, String zip, String country, String phone) {
-        newAdressPage.fillMandatoryFields(alias,address,city,zip,country,phone);
+    @And("fill mandatory fields {string}, {string}, {string}, {string},{string}")
+    public void fillMandatoryFields(String alias, String address, String city, String zip, String phone) {
+        newAdressPage.fillMandatoryFields(alias,address,city,zip,phone);
     }
 
 
@@ -80,10 +80,20 @@ public class Zadanie1StepsDef {
 
 
     @Then("user has succesfully added a new address")
-    public void userHasSuccesfullyAddedANewAdressAndDeletedIt() {
+    public void userHasSuccesfullyAddedANewAdress() {
         Assertions.assertEquals("Address successfully added!",adressSavedPage.getAdditionStatusText());
 
     }
+
+    @And("new adress data was correctly added {string}, {string}, {string}, {string},{string}")
+    public void newAdressDataWasCorrectlyAdded(String alias, String adress, String city, String postcode,  String phone) {
+        adressSavedPage.adressIsCorrect(alias,adress,city,postcode,phone);
+    }
+
+
+
+
+
 
 
     @And("user delete newly added adress")
@@ -95,5 +105,8 @@ public class Zadanie1StepsDef {
     @And("adress is deleted")
     public void adressIsDeleted() {
         Assertions.assertEquals("Address successfully deleted!",adressSavedPage.getAdditionStatusText());
+
     }
+
+
 }

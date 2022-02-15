@@ -5,11 +5,12 @@ Feature: adding new adress for existing user on Mystore site
     And user puts proper credentials into username and passwort input fields and clicks sign in
     And clicks on adresses on a main shop site
     And clicks create new adress
-    And fill mandatory fields "<alias>", "<address>", "<city>", "<zip/postal code>","<country>","<phone>"
+    And fill mandatory fields "<alias>", "<address>", "<city>", "<zip/postal code>","<phone>"
     And clicks save
     Then user has succesfully added a new address
+    And  new adress data was correctly added "<alias>", "<address>", "<city>", "<zip/postal code>","<phone>"
     And user delete newly added adress
     And adress is deleted
     Examples:
-      |alias|address|city|zip/postal code|country|phone|
-      |msislaw@wp.pl     |ul Kolorowa 78|Poznan|00-382|UK|698444738|
+      |alias|address|city|zip/postal code|phone|
+      |msislaw@wp.pl     |ul Kolorowa 78|Wroc|00-382|698444738|

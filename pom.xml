@@ -37,6 +37,30 @@
             <version>7.2.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>3.0.8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>4.1.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v92</artifactId>
+            <version>4.0.0-rc-1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v85</artifactId>
+            <version>4.1.1</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 

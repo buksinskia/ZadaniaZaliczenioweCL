@@ -13,7 +13,12 @@ public class YourAccountPage {
     }
     @FindBy(xpath = "//*[@id=\"footer_account_list\"]/li[4]/a")
     private WebElement adressesButton;
+   @FindBy(xpath = "//*[@id=\"_desktop_logo\"]/a")
+   private WebElement myStoreLogo;
     public void navigateToAdresses(){
         adressesButton.click();
     }
-}
+
+    public void navigateToMainPage(){
+    myStoreLogo.click();
+}}

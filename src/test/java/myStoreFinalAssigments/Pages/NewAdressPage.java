@@ -30,7 +30,8 @@ public class NewAdressPage {
     WebElement phoneInput;
     @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/footer/button")
     private WebElement saveFormButton;
-    public void fillMandatoryFields(String alias, String address,String city,String zippostalcode,String country,String phone){
+    public void fillMandatoryFields(String alias, String address,String city,String zippostalcode,String phone){
+        String country="UK";
         aliasInput.sendKeys(alias);
         adressInput.sendKeys(address);
         cityInput.sendKeys(city);
@@ -39,7 +40,7 @@ if(Objects.equals(country, "UK")){
         countryDropdown.click();
         choseUKbutton.click();}
 else {
-    throw new ElementNotSelectableException("There's no such a country on a list");
+    throw new ElementNotSelectableException("There's no such  country on a list");
 }
 
 
